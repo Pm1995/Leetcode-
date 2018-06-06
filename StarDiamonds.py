@@ -159,6 +159,97 @@ print("\r")
 
 
 
+#problem 12
+for i in range(1,6):
+	s=""
+	for j in range(1,i+1):
+		s=s+str(j)
+	print(s)
+print("\r")
 
+
+#problem 19
+obs="abcdefghijklmnopqrstuvwxyz"
+for i in range(0,5):
+	s=""
+	for j in range(5-i,0,-1):
+		s=s+str(obs[5-i-j])
+	print(s)
+print("\r")
+
+
+
+
+#problem 26
+n=5
+for i in range(0,n):
+	s=" "*(n-i-1)
+	for j in range(1,i+2):
+		s=s+str(j)
+	print(s)
+print("\r")
+
+
+#problem 28 
+obs="abcdefghijklmnopqrstuvwxyz"
+for i in range(0,n):
+	s=" "*(n-i-1)
+	for j in range(0,i+1):
+		s=s+str(obs[j])
+	print(s)
+print("\r")
+
+
+
+#problem 31
+n=5
+for i in range(0,n):
+	s=" "*i
+	for j in range(1,n + 1-i):
+		s=s+str(j)
+	print(s)
+print("\r")
+
+
+#problem 33
+obs="abcdefghijklmnopqrstuvwxyz"
+n=5
+for i in range(0,n):
+	s=" "*i
+	for j in range(0,n-i):
+		s=s+str(obs[j])
+	print(s)
+print("\r")
+
+
+#problem 32
+n=5
+for i in range(0,n):
+	s=""
+	s=" "*(i)
+	s=s+str(obs[n-i-1])*(n-i)
+	print(s)
+print("\r")
+
+
+#problem 23 ( continue     )
+n=5
+for i in range(0,n):
+	s=""
+	s=s+"*"*(n-i)
+	print(s)
+print("\r")
+
+obs="abcdefghijklmnopqrstuvwxyz"
+
+
+
+#problem 48 
+n=5
+for i in range(0,n):
+	s=" "*(i)
+	s=s+str(n-i)*(2*(n-i)-1)
+	print(s)
+print("\r")
 
 
