@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 obs='abcdefghijklmnopqrstuvwxyz'
 
 for i in range(0,5):
@@ -254,7 +253,6 @@ for i in range(0,n):
 print("\r")
 
 
-=======
 obs='abcdefghijklmnopqrstuvwxyz'
 
 for i in range(0,5):
@@ -419,4 +417,3 @@ print("\r")
 
 
 
->>>>>>> 8b09f9dbabd4672a6bfa171432b7471784906f6a
