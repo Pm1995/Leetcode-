@@ -51,6 +51,37 @@ for i in range(len(lis2)):
 		thirlargest=lis2[i]
 lis2.remove(thirlargest)
 print(thirlargest)
+print("\r")
+
+
+#second largest product 
+list=[11,9,7,6,12,14]
+largest=list[0]
+smallest=list[0]
+for i in range(len(list)):
+	for j in range(len(list)):
+		if largest<list[i] or smallest>list[j]:
+			largest=list[i]
+			smallest=list[j]
+list.remove(largest)
+list.remove(smallest)
+seclargest=list[0]
+secsmallest=list[0]
+for i in range(len(list)):
+	for j in range(len(list)):
+		if seclargest<list[i] or secsmallest>list[j]:
+			seclargest=list[i]
+			secsmallest=list[j]
+print(secsmallest*seclargest)
+
+print("\r")
 
 
 
+#
+list=[1,2,3,4,5,2]
+leader=list[0]
+for i in range(len(list)):
+	if leader<list[i]:
+		list.remove(leader)
+print(list)
