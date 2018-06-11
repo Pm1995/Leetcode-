@@ -78,10 +78,23 @@ print("\r")
 
 
 
-#
-list=[1,2,3,4,5,2]
-leader=list[0]
-for i in range(len(list)):
-	if leader<list[i]:
-		list.remove(leader)
-print(list)
+#medium
+
+#second largest even 
+list=[78,92,44,63,71,97,90,100,120]
+for i in list:
+	if largest<i and i%2==0:
+		largest=i
+list.remove(largest)
+seclargest=list[0]
+for i in list:
+	if seclargest<i and i%2==0:
+		seclargest=i
+print(seclargest)
+print("\r")
+
+
+#count specific elements
+li=[33,77,91,40,30,93,75]
+
+
