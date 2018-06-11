@@ -95,6 +95,80 @@ print("\r")
 
 
 #count specific elements
-li=[33,77,91,40,30,93,75]
+li=[33,77,91,40,30,93,75,150]
+newli=[]
+for i in li:
+	if i%3==0 or i%5==0:
+		newli.append(i)
+print(len(newli))
+print("\r")
 
+
+#remove specific content
+list=[10,20,30,2,4,7,8]
+new=[]
+for i in range(len(list)):
+	if list[i]%10!=0:
+		new.append(list[i])
+print(new)
+print("\r")
+
+
+#count in range
+list=[16,17,4,3,5,2]
+#2,10
+count=0
+for i in range(len(list)):
+	if list[i]>=2 and list[i]<=10:
+		count=count+1
+print(count)
+print("\r")
+
+#add odd index
+list=[10,20,2,4,7,8]
+count=0
+for i in range(len(list)):
+	if i%2!=0:
+		count=count+list[i]
+print(count)
+print("\r")
+
+
+#odd vs even
+list=[74,32,31,91,77,88,96,44,23]
+oddcount=0
+evencount=0
+for i in range(len(list)):
+	if list[i]%2==0:
+		evencount=evencount+1
+	else:
+		oddcount=oddcount+1
+if evencount>oddcount:
+	print("even")
+elif oddcount>evencount:
+	print("odd")
+else:
+	print("tie")
+
+print("\r")
+
+
+
+#check occurences
+array=[10,13,13,27,13]
+a={}
+count=0
+for i in range(len(array)):
+	a[array[i]]=0
+for j in a:
+	for m in range(len(array)):
+		if j==array[m]:
+			a[j]=a[j]+1
+for k in a:
+	if a[k]==3:
+		count=count+1
+if count>0:
+	print("true")
+else:
+	print("false")
 
