@@ -100,10 +100,6 @@ for b in dic:
 		majority=b
 print(majority)
 print("\r")
-#largest=dic[1]
-#for m in dic:
-	#if largest<dic[m]:
-		#largest=dic[m]
-#print(largest)
+
 
 
