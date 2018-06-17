@@ -201,3 +201,18 @@ array=[0,0,0,0]
 for i in range(len(list)):
 	array[list[i]]=i
 print(array)
+print("\r")
+
+
+
+#hard
+
+#odd gets bigger
+
+list=[78,92,44,63,71,97]
+new=[]
+
+for i in list:
+	if i%2==0:
+		list.remove(i)
+print(list)
