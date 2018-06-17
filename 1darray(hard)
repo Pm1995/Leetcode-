@@ -47,17 +47,63 @@ print("\r")
 
 #count couples
 array=[1,5,7,-1,4,2]
-#for i in range(4):
-	#print(i)
-	#for j in range(4-i):
-		#if array[i]+array[j+1]==6:
-			#print(array[i],array[j+1])
-
 for i in range(len(array)):
 	for j in range(len(array)-(i+1)):
 		if array[i]+array[j+i+1]==6:
 			couples=(array[i],array[j+1+i])
 			print(couples)
 print("\r")
+
+
+#add occurence of twice
+array=[9,8,7,7,8,6,5,4,6,5,1,2]
+dic={}
+for i in range(len(array)):
+	dic[array[i]]=0
+for j in dic:
+	for m in range(len(array)):
+		if j==array[m]:
+			dic[j]=dic[j]+1
+count=0
+for k in dic:
+	if dic[k]==2:
+		count=count+k
+print(count)
+print("\r")
+
+
+#count for surpasser
+list=[2,7,5,3,0,8,1]
+jin=[]
+dic={}
+for i in range(len(list)):
+	for j in range(len(list)-(i+1)):
+		count=0
+		if list[i]<list[j+i+1]:
+			print(list[i],list[i+j+1])
+print("\r")
+
+
+#is there any majority number?
+array=[11,11,11,11,23,11,24,13,55]
+dic={}
+for i in range(len(array)):
+	dic[array[i]]=0
+for j in dic:
+	for m in range(len(array)):
+		if j==array[m]:
+			dic[j]=dic[j]+1
+thresh=len(array)/2
+majority=0
+for b in dic:
+	if dic[b]>thresh:
+		majority=b
+print(majority)
+print("\r")
+#largest=dic[1]
+#for m in dic:
+	#if largest<dic[m]:
+		#largest=dic[m]
+#print(largest)
 
 
