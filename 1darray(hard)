@@ -102,4 +102,34 @@ print(majority)
 print("\r")
 
 
+#subarray with zero
+array=[4,2,-3,1,6]
+for i in range(len(array)):
+	comp=array[i]
+	list=[]
+	for j in range(len(array)-(i+1)):
+		list.append(array[j+i+1])
+		if comp+sum(list)==0:
+			print("yes")
+print("\r")
+
+
+#duplicates within k
+array=[1,2,3,4,1,2,3,4]
+k=3
+for i in range(len(array)):
+	start=array[i]
+	for j in range(len(array)-(i+1)):
+		if start==array[j+i+1]:
+			if (j+1)<k:
+				print("yes")
+			else:
+				print("no")
+
+
+
+
+
+
+
 
