@@ -125,6 +125,33 @@ for i in range(len(array)):
 				print("yes")
 			else:
 				print("no")
+print("\r")
+
+
+
+#smallest subarray length
+thresh=51
+array=[1,4,45,6,0,19]
+for i in range(len(array)):
+	start=array[i]
+	list=[]
+	numlist=[]
+	for j in range(len(array)-(i+1)):
+		list.append(array[j+i+1])
+		if start+sum(list)>thresh:
+			list.append(start)
+			print(len(list))  #minimum length is 3 from the output 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
