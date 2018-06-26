@@ -1,29 +1,3 @@
-"""
-from collections import deque
-queue = deque(["Ram", "Tarun", "Asif", "John"])
-print(queue)
-queue.append("Akbar")
-print(queue)
-queue.append("Birbal")
-print(queue)
-print(queue.popleft())                 
-print(queue.popleft())                 
-print(queue)"""
-
-
-q=[]
-q.append('eat')
-q.append('sleep')
-q.append('code')
-print(q)
-
-q.pop(0)
-print(q)
-print("\r")
-
-
-
-
 #queue
 
 def queues(comm,list,elem):
@@ -57,4 +31,8 @@ for i in range(len(list)-1,list.index(elem),-1):
 	empt.append(list[i])
 print(empt)
 print("\r")
+
+
+
+
 	
