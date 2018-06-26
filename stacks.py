@@ -63,5 +63,50 @@ def ifbalance(parentheses):
 	return len(stack)==0
 
 print(ifbalance(')(()'))
+print("\r")
+
+
+
+#balanced parenthesis
+expr='[()]{}{[()()]()}'
+opening='[({'
+stack=[]
+
+for i in expr:
+	if i in opening:
+		stack.append(i)
+	else:
+		if len(stack)!=0:
+			stack.pop()
+		else:
+			print("False")
+print(len(stack)==0)
+print("\r")
+
+
+#balanced brackets
+expr='{[(])}'
+opening='{[('
+stack=[]
+for i in expr:
+	if i in opening:
+		stack.append(i)
+	else:
+		if len(stack)!=0:
+			stack.pop()
+		else:
+			print("no")
+if len(stack)==0:
+	print("yes")
+else:
+	print("no")
+print("\r")
+
+
+
+
+
+
+
 
 
