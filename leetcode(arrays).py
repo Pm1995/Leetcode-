@@ -1,3 +1,5 @@
+
+"""
 #contain duplicates-Given an array of integers, find if the array contains any duplicates.
 nums=[1,2,3,1]
 dict={}
@@ -82,4 +84,57 @@ for i in range(len(matrix[0])):
 print(list)
 print("\r")
 
+
+"""
+
+#remove duplicates from sorted array
+nums=[0,0,1,1,1,2,2,3,3,4]
+
+dict={}
+for i in range(len(nums)):
+	dict[nums[i]]=0
+list=[]
+for k in dict.keys():
+	list.append(k)
+print(list)
+print("\r")
+
+"""
+#Third maximum number
+array=[3, 2, 1]
+
+largest=array[0]
+for i in range(len(array)):
+	if largest<array[i]:
+		largest=array[i]
+array.pop(array.index(largest))
+
+seclarg=array[0]
+for i in range(len(array)):
+	if seclarg<array[i]:
+		seclarg=array[i]
+array.pop(array.index(seclarg))
+print(array)
+
+"""
+
+
+#remove zeroes
+nums=[0,0,1]
+#nums=[0,1,0,3,12]
+
+list=[]
+
+
+for i in nums[:]:
+	if i==0:
+		list.append(i)
+		nums.remove(i)
+print(list)
+
+
+for k in list:
+	nums.append(k)
+
+print(nums)
 
