@@ -119,22 +119,42 @@ print(array)
 """
 
 
-#remove zeroes
+#remove zeroes and then append it in the end 
 nums=[0,0,1]
-#nums=[0,1,0,3,12]
-
 list=[]
-
-
 for i in nums[:]:
 	if i==0:
 		list.append(i)
 		nums.remove(i)
-print(list)
-
-
 for k in list:
 	nums.append(k)
 
 print(nums)
+print("\r")
+
+
+#longest continuos increasing subsequence
+array=[1]
+list=[]
+cont=[]
+count=0
+for i in range(len(array)-1):
+	if array[i]<array[i+1]:
+		count=count+1
+		cont.append(count+1)
+	else:
+		list.append(count+1)
+		count=0
+		continue
+
+if len(list)>0 and len(cont)>0:
+	print(max(max(list),max(cont)))
+elif len(array)==1:
+	print(1)
+elif len(list)==0 and len(cont)==0:
+	print(0)
+elif len(list)==0 and len(cont)>0:
+	print(max(cont))
+elif len(list)>0 and len(cont)==0:
+	print(max(list))
 
