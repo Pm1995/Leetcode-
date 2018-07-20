@@ -1,0 +1,53 @@
+#heap reference
+import heapq
+
+#convert to heap
+H=[21,1,45,78,3,5]
+heapq.heapify(H)
+print(H)
+
+
+#add element
+heapq.heappush(H,8)
+print(H)
+
+#remove element
+heapq.heappop(H)
+print(H)
+
+
+#convert to heap
+H = [21,1,45,78,3,5]
+heapq.heapify(H)
+
+#replace element
+heapq.heapreplace(H,6)
+print(H)
+print("\r")
+
+
+
+#k maximum sum
+import heapq
+k=4
+arr1=[3,4,7]
+arr2=[3,4,7]
+
+heapq.heapify(arr1)
+heapq.heapify(arr2)
+
+
+li1=[]
+li2=[]
+
+"""if k%2==0:
+	li1.append(heapq.nlargest(k//2,arr1))
+print(li1)"""
+
+
+li1.append(heapq.nlargest(k//2,arr1))
+li2.append(heapq.nlargest(k//2,arr2))
+print(li1)
+print(li2)
+
+
