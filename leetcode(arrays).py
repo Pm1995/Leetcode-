@@ -157,4 +157,21 @@ elif len(list)==0 and len(cont)>0:
 	print(max(cont))
 elif len(list)>0 and len(cont)==0:
 	print(max(list))
+print("\r")
+
+
+#Best Time to Buy and Sell Stock
+prices=[3,3]
+prices.reverse()
+list=[]
+for i in range(len(prices)):
+	start=prices[i]
+	for j in range(len(prices)-(i+1)):
+		#print(start,prices[j+(i+1)])
+		list.append(start-prices[j+(i+1)])
+if max(list)>0:
+	print(max(list))
+else:
+	print(0)
+
 
