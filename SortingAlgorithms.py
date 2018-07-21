@@ -47,3 +47,26 @@ def mergesort(list):
 
 mergesort(array)
 print(array)
+print("\r")
+
+
+#Quicksort 
+array2=[4,6,3,2,1,7,5]
+def quicksort(list,start,end):
+	if start<end:
+		pindex=partition(list,start,end)
+		quicksort(list,start,pindex-1)
+		quicksort(list,pindex+1,end)
+
+def partition(list,start,end):
+	pivot=list[end]
+	pindex=start
+	for i in range(start,end,1):
+		if list[i]<=pivot:
+			list[i],list[pindex]=list[pindex],list[i]
+			pindex=pindex+1
+	list[pindex],list[end]=list[end],list[pindex]
+	return pindex
+
+quicksort(array2,0,6)
+print(array2)
