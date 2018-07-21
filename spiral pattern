@@ -1,7 +1,6 @@
 #print spiral pattern 2d
 matrix=[[2,4,6,8],[5,9,12,16],[2,11,5,9],[3,2,1,8]]
-
-T=0;B=3;L=0;R=3;dir=0
+T=0;B=len(matrix)-1;L=0;R=len(matrix[0])-1;dir=0
 while T<=B and L<=R:
 	if dir==0:
 		for i in range(L,R+1):
