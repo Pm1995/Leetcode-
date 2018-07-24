@@ -37,3 +37,18 @@ print(ttt(nums))
 print("\r")
 
 
+#maximum subarray using Kadane's Algorithm
+nums=[-2,-1]
+max_ending_here=0
+max_so_far=0
+
+for i in range(len(nums)):
+	max_ending_here=max_ending_here+nums[i]
+	if max_ending_here<0:
+		max_ending_here=0
+	elif max_so_far<max_ending_here:
+		max_so_far=max_ending_here
+if max_so_far>0:
+	print(max_so_far)
+else:
+	print(max(nums))
