@@ -9,3 +9,41 @@ if len(list)==0:
 else:
 	print(max(list))
 print("\r")
+
+
+#Wave array
+list=[1, 2, 3, 4,5,6,7]
+emp=[]
+for i in range(len(list)//2):
+	emp.append(list[2*i:2*i+2])
+for i in range(len(emp)):
+	emp[i][0],emp[i][1]=emp[i][1],emp[i][0]
+#print(sum(emp, []))
+new=sum(emp, [])
+if len(list)//2!=0:
+	new.append(list[-1])
+print(new)
+print("\r")
+
+
+#Maximum distance
+array=[3,5,4,2]
+list=[]
+for i in range(len(array)):
+	for j in range(i+1,len(array),1):
+		ref=array[i]
+		if ref<array[j]:
+			list.append(j-i)
+print(max(list))
+print("\r")
+
+
+
+#Find duplicates in subarray 
+array=[3,4,1,4,1]
+array.sort()
+for i in range(len(array)-1):
+	if array[i]==array[i+1]:
+		print(array[i])
+print("\r")
+
