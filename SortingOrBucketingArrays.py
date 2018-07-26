@@ -20,7 +20,7 @@ for i in range(len(emp)):
 	emp[i][0],emp[i][1]=emp[i][1],emp[i][0]
 #print(sum(emp, []))
 new=sum(emp, [])
-if len(list)//2!=0:
+if len(list)%2!=0:
 	new.append(list[-1])
 print(new)
 print("\r")
@@ -38,6 +38,23 @@ print(max(list))
 print("\r")
 
 
+#Maximum distance using efficiency 
+array=[3,5,4,2,10]
+mydict={}
+for i in range(len(array)):
+	mydict[array[i]]=i
+print(mydict)
+trans=[]
+for key in sorted(mydict):
+	trans.append(mydict[key])
+print(trans)
+
+mid=len(array)//2
+if len(array)%2==0:
+	print(max(trans[mid:]))
+else:
+	print(max(trans[mid+1:]))
+print("\r")
 
 #Find duplicates in subarray 
 array=[3,4,1,4,1]
@@ -46,4 +63,6 @@ for i in range(len(array)-1):
 	if array[i]==array[i+1]:
 		print(array[i])
 print("\r")
+
+
 
