@@ -50,5 +50,38 @@ else:
 print("\r")
 
 
-#Contains duplicates 2- Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and 
-#the absolute difference between i and j is at most k.
+#Contains Duplicate II- Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and
+# the absolute difference between i and j is at most k.
+
+nums = [1,0,1,1]
+k = 3
+new=[]
+
+dict={}
+for i in range(len(nums)):
+	dict[nums[i]]=i
+print(dict)
+
+"""i=0
+while i<len(nums)-1:
+	if dict[nums[i]]>1 and 
+"""
+
+
+
+
+
+
+#Remove duplicates from sorted array
+print("\r")
+
+nums=[2,2,2,3,4]
+
+i=0
+while i<len(nums)-1:
+	if nums[i]!=nums[i+1]:
+		i=i+1
+	else:
+		nums.pop(i)
+print(nums)
+print("\r")
