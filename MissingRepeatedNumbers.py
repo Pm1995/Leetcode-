@@ -85,3 +85,22 @@ while i<len(nums)-1:
 		nums.pop(i)
 print(nums)
 print("\r")
+
+
+#Find Pivot Index
+nums = [-1,-1,0,1,1,0]
+i=0
+ans=-1000
+while i<len(nums):
+	if sum(nums[:i])==sum(nums[i+1:]):
+		ans=i
+		break
+	i=i+1
+
+if ans>=0:
+	print(ans)
+else:
+	print(-1)
+print("\r")
+
+
