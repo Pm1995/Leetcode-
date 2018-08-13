@@ -73,3 +73,29 @@ while i<j:
 		j=j-1
 
 print(list)
+print("\r")
+
+
+#Valid Palindrome
+s="A man, a plan, a canal: Panama"
+s=s.lower()
+new=''.join(e for e in s if e.isalnum())
+
+i=0
+j=len(new)-1
+c=0
+
+while i<j:
+	if new[i]!=new[j]:
+		print("false")
+		break
+	elif new[i]==new[j]:
+		i=i+1
+		j=j-1
+		c=c+1
+if c*2==len(new) or (c*2)+1==len(new):
+	print("true")
+print("\r")
+
+
+
