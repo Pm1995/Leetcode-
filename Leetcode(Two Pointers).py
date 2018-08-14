@@ -13,30 +13,6 @@ print("\r")
 #Move Zeroes
 nums=[4,2,4,0,0,3,0,5,1,0]
 
-"""
-i=0
-j=len(nums)-1
-while i<=j:
-	if nums[i]==0:
-		nums.pop(i)
-		nums.append(0)
-		j=j-1
-	if nums[j]==0:
-		if j==len(nums)-1:
-			j=j-1
-		else:
-			nums.append(nums[j])
-			nums.pop(j)
-			i=i+1
-
-	if nums[i]!=0 and nums[j]!=0:
-		i=i+1
-		j=j-1
-
-print(nums)
-
-
-"""
 c = 0
 i=0
 while c <len(nums):
@@ -98,4 +74,73 @@ if c*2==len(new) or (c*2)+1==len(new):
 print("\r")
 
 
+
+#Remove Element-Given an array nums and a value val, remove all instances of that value in-place and return
+                #the new length.
+
+nums = [3,2,2,3]
+val = 3
+i=0
+
+while i<len(nums):
+	if nums[i]==val:
+		nums.pop(i)
+	elif nums[i]!=val:
+		i=i+1
+print(len(nums))
+print("\r")
+
+#Remove duplicates from sorted array 
+nums = [0,0,1,1,1,2,2,3,3,4]
+
+i=0
+while i<len(nums)-1:
+	if nums[i]!=nums[i+1]:
+		i=i+1
+	else:
+		nums.pop(i)
+print(nums)
+print("\r")
+
+
+
+
+#Merge Sorted Array 
+nums1 = [1,2,3,0,0,0]
+nums2 = [2,5,6]
+
+i=0
+j=0
+list=[]
+
+while i<len(nums1) and j<len(nums2):
+	if nums1[i]<nums2[j]:
+		list.append(nums1[i])
+		nums1.pop(i)
+	elif nums2[j]<nums1[i]:
+		list.append(nums2[j])
+		nums2.pop(j)
+	elif nums1[i]==nums2[j]:
+		list.append(nums1[i])
+		nums1.pop(i)
+		list.append(nums2[j])
+		nums2.pop(j)
+
+while i<len(nums1):
+	list.append(nums1[i])
+	nums1.pop(i)
+
+		
+while j<len(nums2):
+	list.append(nums2[j])
+	nums2.pop(j)
+
+
+m=0
+while m<len(list)-1:
+	if list[m]==0:
+		list.pop(m)
+	else:
+		m=m+1
+print(list)
 
