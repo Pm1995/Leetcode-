@@ -44,3 +44,49 @@ while a<len(nums1) or b<len(nums2):
 print(new)
 print("\r")
 
+
+#Given an array having N integers, find the contiguous subarray having sum as great as possible, but not greater than M
+array=[-2,1,-3,4,-1,2,1,-5,4]
+
+#method 1:using Kandane's algo 
+sum_so_far=0
+greatest_so_far=0
+
+for i in range(len(array)):
+	sum_so_far=sum_so_far+array[i]
+	if sum_so_far<0:
+		sum_so_far=0
+	if greatest_so_far<sum_so_far:
+		greatest_so_far=sum_so_far
+print(greatest_so_far)
+print("\r")
+
+#method 2: using two pointer 
+i=0
+j=len(array)-1
+new=[]
+while i<j:
+	new.append(sum(array[i:j+1]))
+	if array[i]<array[j]:
+		i=i+1
+	if array[j]<=array[i]:
+		j=j-1
+
+print(max(new))
+print("\r")
+
+
+
+#merge two sorted arrays
+nums=[1,2,3,4,5,6,7]
+k=3
+
+
+while k>0:
+	nums.insert(0,nums[-1])
+	nums.pop(len(nums)-1)
+	k=k-1
+print(nums)
+print("\r")
+
+
