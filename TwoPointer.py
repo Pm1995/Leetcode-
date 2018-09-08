@@ -90,3 +90,58 @@ print(nums)
 print("\r")
 
 
+#Find First and Last Position of Element in Sorted Array
+nums = [1,2,4,5,6,6]
+target = 6
+
+list=[]
+i=0
+while i<=len(nums)-1:
+	if nums[i]==target:
+		list.append(i)
+	i=i+1
+
+
+if len(list)==0:
+	print([-1,-1])
+else:
+	print([list[0],list[-1]])
+
+
+
+#summary ranges
+list=[0,1,2,4,5,7]
+
+new=[]
+for i in range(len(list)-1):
+	temp=[]
+	if list[i+1]-list[i]==1:
+		temp.append([list[i],list[i+1]])
+		new.append(temp)
+	else:
+		temp=0
+		continue
+print(new)
+
+print("\r")
+
+
+#Majority element
+nums=[1,1,1,3,3,2,2,2]
+dictionary={}
+list=[]
+
+for i in range(len(nums)):
+	dictionary[nums[i]]=0
+
+for i in range(len(nums)):
+	if nums[i] in dictionary:
+		dictionary[nums[i]]=dictionary[nums[i]]+1
+
+
+for i in dictionary:
+	if dictionary[i]>len(nums)//3:
+		list.append(i)
+
+print(list)
+print("\r")
