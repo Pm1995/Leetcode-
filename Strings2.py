@@ -2,8 +2,6 @@
 s="paper"
 t="title"
 
-if len(s)!=len(t):
-	print("false")
 dictionart={}
 check={}
 for i in range(len(s)):
@@ -23,4 +21,5 @@ if count>1 or len(s)!=len(t):
 	print("false")
 else:
 	print("true")
+print("\r")
 
