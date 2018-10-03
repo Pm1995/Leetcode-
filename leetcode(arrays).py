@@ -173,5 +173,97 @@ if max(list)>0:
 	print(max(list))
 else:
 	print(0)
+print("\r")
 
 
+
+#Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+nums=[2, 7, 11, 15]
+target=9
+dicti={}
+
+for i in range(len(nums)):
+	#dicti[nums[i]]=0
+	m=target-nums[i]
+	dicti[nums[i]]=m
+list=[]
+
+for d in dicti:
+	if d + dicti[d]==9 and dicti[d]>0:
+		list.append(d)
+		list.append(dicti[d])
+		break
+
+for i in range(len(list)):
+	print(nums.index(list[i]))
+print("\r")
+
+
+#roman to integer
+ref={'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
+str='III'
+"""
+list=[]
+for i in str:
+	list.append(ref[i])
+print(sum(list))
+"""
+
+str2="IV"
+list2=[]
+for i in range(len(str2)):
+	if i-1=="I":
+		print(str2[i])
+
+
+for i in range(2,5+1,1):
+	if i%2!=0:
+		print(i)
+print("\r")
+
+
+#valid palindrome
+s="A man, a plan, a canal: Panama"
+s=s.lower()
+s=''.join(e for e in s if e.isalnum())
+
+
+
+for i in range(0,len(s)//2,1):
+	if s[i]==s[-(i+1)]:
+		print("true")
+	else:
+		print("False")
+print("\r")
+
+#alid Anagram
+s = "aacc"
+t = "ccac"
+
+dic={}
+for i in range(len(s)):
+	dic[s[i]]=0
+
+
+
+
+for i in range(len(s)):
+	dic[s[i]]+=1
+
+
+for j in t:
+	if j in dic:
+		dic[j]=dic[j]-1
+	else:
+		dic[j]=1000
+
+
+for i in dic:
+	if dic[i]<0:
+		dic[i]=1000
+
+
+if sum(dic.values())==0:
+	print("true")
+else:
+	print("false")
