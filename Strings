@@ -1,0 +1,55 @@
+#Length of Last Word
+s="a"
+
+count=0
+list=[]
+for i in reversed(s):
+	if i!=' ':
+		count=count+1
+	if i==' ':
+		list.append(count)
+		count=0
+		continue
+	if i==s[0]:
+		list.append(count)
+		count=0
+		continue
+if len(list)==0:
+	print(0)
+elif list[-1]==0:
+	print(list[0])
+else:
+	print(list[-1])
+print("\r")
+
+
+#Word Pattern
+pattern = "abba"
+string = "dog cat cat dog"
+
+
+
+def valid(pattern,string):
+	di={}
+	di2={}
+	split=string.split()
+	for i in range(0,len(pattern),1):
+		di[pattern[i]]=i
+
+	for j in range(0,len(split),1):
+		di2[split[j]]=j
+
+	list1=[]
+	list2=[]
+
+	for m in di:
+		list1.append(di[m])
+
+	for n in di2:
+		list2.append(di2[n])
+
+	return(list1==list2)
+
+
+print(valid(pattern,string))
+print("\r")
