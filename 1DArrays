@@ -205,14 +205,40 @@ print("\r")
 
 
 
-#hard
+#Contains Duplicate
+nums=[1,2,3,1]
+dict={}
 
-#odd gets bigger
+for i in range(len(nums)):
+	dict[nums[i]]=0
 
-list=[78,92,44,63,71,97]
-new=[]
+for i in nums:
+	if i in dict:
+		dict[i]+=1
 
-for i in list:
-	if i%2==0:
-		list.remove(i)
-print(list)
+count=0
+for i in dict.values():
+	if i>1:
+		count+=1
+if count>0:
+	print("true")
+else:
+	print("false")
+print("\r")
+
+
+
+
+#Contains Duplicate II
+nums = [1,2,3,1,2,3]
+k=3
+dict={}
+for id,vals in enumerate(nums):
+	if vals not in dict:
+		dict[vals]=id
+	else:
+		if id-dict[vals]<=k:
+			print("true")
+		else:
+			dict[vals]=id
+print("false")
