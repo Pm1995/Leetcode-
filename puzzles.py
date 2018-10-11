@@ -41,3 +41,21 @@ for i in range(len(s)-1):
 print(num+mydict[s[-1]])
 print("\r")
 
+
+
+#happy number
+n=19
+s=str(n)
+
+ans=n
+while ans!=1:
+	temp=str(ans)
+	ans=0
+	for i in temp:
+		ans=ans+int(i)*int(i)
+	if ans==1:
+		print("true")
+		break
+print("\r")
+
+
