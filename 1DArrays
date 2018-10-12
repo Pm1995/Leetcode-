@@ -242,3 +242,24 @@ for id,vals in enumerate(nums):
 		else:
 			dict[vals]=id
 print("false")
+print("\r")
+
+
+#two sum 
+nums = [2, 7, 11, 15]
+target = 9
+dict={}
+list=[]
+
+for i,n in enumerate(nums):
+	dict[n]=i
+
+
+for j in nums:
+	m=target-j
+	if m in dict.keys():
+		list.append(dict[m])
+
+
+print(list)
+print("\r")
