@@ -53,3 +53,56 @@ def valid(pattern,string):
 
 print(valid(pattern,string))
 print("\r")
+
+
+
+#Implement Strstr
+haystack = "hello"
+needle = "ll"
+
+if needle in haystack:
+	print(haystack.index(needle))
+else:
+	print(-1)
+print("\r")
+
+
+
+#valid palindrome 
+s="A man, a plan, a canal: Panama"
+s=s.lower()
+
+s="".join(e for e in s if e.isalnum())
+
+
+thres=len(s)/2
+
+for i in range(len(s)//2):
+	if s[i]==s[-(i+1)]:
+		continue
+	else:
+		print("false")
+		break
+print("\r")
+
+
+#valid parenthesis
+s="(("
+
+dict={"]":"[",")":"(","}":"{"}
+stack=[]
+if len(s)==1 or len(s)%2!=0:
+	print("false")
+for char in s:
+	if char in dict.values():
+		stack.append(char)
+	elif char in dict.keys():
+		if stack==[] or dict[char]!=stack.pop():
+			print("false")
+			break
+
+if len(stack)==0:
+	print("true")
+else:
+	print("false")
+print("\r")
