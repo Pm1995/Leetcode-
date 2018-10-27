@@ -106,3 +106,57 @@ if len(stack)==0:
 else:
 	print("false")
 print("\r")
+
+
+s="("
+dict={"}":"{",")":"(","]":"["}
+
+stack=[]
+status=0
+
+for char in s:
+	if char in dict.values():
+		stack.append(char)
+	elif char in dict.keys():
+		if stack==[] or dict[char]!=stack.pop():
+			print("false")
+			status=1
+			break
+
+if status==0 and len(stack)==0:
+	print("true")
+elif status==0 and len(stack)!=0:
+	print("false")
+print("\r")
+
+
+#valid anagram 
+s = "rat"
+t = "car"
+status=0
+
+di={}
+
+for i in s:
+	di[i]=0
+
+for j in s:
+	if j in di:
+		di[j]+=1
+
+
+for m in t:
+	if m in di:
+		di[m]=di[m]-1
+	if m not in di:
+		status=1
+		break
+
+
+if sum(di.values())==0 and status==0:
+	print("true")
+else:
+	print("false")
+print("\r")
+
+
