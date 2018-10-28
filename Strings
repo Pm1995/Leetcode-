@@ -160,3 +160,18 @@ else:
 print("\r")
 
 
+
+#Roman to Integer
+mydict = {'I':1, 'V':5, 'X':10, 'L': 50, 'C': 100, 'D': 500, 'M':1000}
+s="MCMXCIV"
+val=0
+
+for i in range(len(s)-1):
+	if mydict[s[i]]<mydict[s[i+1]]:
+		val=val - mydict[s[i]]
+	else:
+		val=val + mydict[s[i]]
+
+print(val + mydict[s[-1]])
+print("\r")
+
