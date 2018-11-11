@@ -175,3 +175,42 @@ for i in range(len(s)-1):
 print(val + mydict[s[-1]])
 print("\r")
 
+
+#Word Pattern 
+pattern="dog cat cat dog"
+string="abba"
+
+d1={}
+d2={}
+
+l1=[]
+l2=[]
+
+
+
+if " " in pattern:
+ 	pattern=pattern.split()
+if " " in string:
+ 	string=string.split()
+
+
+
+
+
+for i,n in enumerate(pattern):
+	d1[n]=i
+
+
+
+for j,x in enumerate(string):
+	d2[x]=j
+
+
+for m in d1.values():
+	l1.append(m)
+
+for b in d2.values():
+	l2.append(b)
+
+print(l1==l2)
+
