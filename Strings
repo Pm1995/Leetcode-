@@ -213,4 +213,61 @@ for b in d2.values():
 	l2.append(b)
 
 print(l1==l2)
+print("\r")
+
+
+#longest common prefix
+
+stri=["flight","flower","flow"]
+
+def prefix(m):
+	if not m:
+		return ""
+	s1=min(m)
+	s2=max(m)
+	for i,n in enumerate(s1):
+		if n!=s2[i]:
+			return(s1[:i])
+	return(s1)
+
+
+print(prefix(stri))
+print("\r")
+
+
+
+# Valid Anagram 
+a1="aacc"
+a2="ccac"
+
+d1={}
+d2={}
+
+for i,n in enumerate(a1):
+	if n not in d1:
+		d1[n]=1
+	else:
+		d1[n]+=1
+
+
+for i in a2:
+	if i in d1:
+		d1[i]=d1[i]-1
+	else:
+		d1[i]=1000
+
+
+for i in d1:
+	if d1[i]<0:
+		d1[i]=1000
+
+
+if sum(d1.values())==0:
+	print("true")
+else:
+	print("false")
+print("\r")
+
+
+
 
