@@ -159,6 +159,37 @@ else:
 	print("false")
 print("\r")
 
+# Valid Anagram 
+a1="aacc"
+a2="ccac"
+
+d1={}
+d2={}
+
+for i,n in enumerate(a1):
+	if n not in d1:
+		d1[n]=1
+	else:
+		d1[n]+=1
+
+
+for i in a2:
+	if i in d1:
+		d1[i]=d1[i]-1
+	else:
+		d1[i]=1000
+
+
+for i in d1:
+	if d1[i]<0:
+		d1[i]=1000
+
+
+if sum(d1.values())==0:
+	print("true")
+else:
+	print("false")
+print("\r")
 
 
 #Roman to Integer
@@ -236,38 +267,16 @@ print("\r")
 
 
 
-# Valid Anagram 
-a1="aacc"
-a2="ccac"
-
-d1={}
-d2={}
-
-for i,n in enumerate(a1):
-	if n not in d1:
-		d1[n]=1
-	else:
-		d1[n]+=1
 
 
-for i in a2:
-	if i in d1:
-		d1[i]=d1[i]-1
-	else:
-		d1[i]=1000
+#summing  digits until singular digit 
+input=38
 
+def sumdigits(num):
+	while num>9:
+		num=sum(int(x) for x in str(num))
+	return(num)
 
-for i in d1:
-	if d1[i]<0:
-		d1[i]=1000
-
-
-if sum(d1.values())==0:
-	print("true")
-else:
-	print("false")
+print(sumdigits(input))
 print("\r")
-
-
-
 

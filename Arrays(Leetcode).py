@@ -77,4 +77,46 @@ print("\r")
 
 
 
+#
+nums1 = [1,2,3,0,0,0]
+nums2 = [2,5,6]
+
+m=3
+n=3
+
+i=0
+j=0
+while i<m and j<n:
+	if nums1[i]>=nums2[j]:
+		nums1.insert(i,nums2[j])
+		nums2.pop(j)
+		i=i+1
+	if nums1[i]<nums2[j]:
+		i=i+1
+
+while j<len(nums2):
+	nums1.insert(i+1,nums2[j])
+	#nums1.append(nums2[j])
+	nums2.pop(j)
+	i=i+1
+
+print(nums1)
+print("\r")
+
+
+
+nums=[3,2,3]
+dic={}
+
+for n in nums:
+	if n not in dic:
+		dic[n]=1
+	else:
+		dic[n]=dic[n]+1
+
+
+for i in dic:
+	if dic[i]>len(nums)/2:
+		print("true")
+
 
