@@ -280,3 +280,19 @@ def sumdigits(num):
 print(sumdigits(input))
 print("\r")
 
+
+
+
+#Reverse String by modifying the existing data structure 
+inp=["h","e","l","l","o"]
+#out=["o","l","l","e","h"]
+
+count=0
+while count<len(inp)//2:
+	a=inp[count]
+	b=inp[len(inp)-count-1]
+	inp[count]=b
+	inp[len(inp)-count-1]=a
+	count=count+1
+
+print(inp)
