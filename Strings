@@ -296,3 +296,95 @@ while count<len(inp)//2:
 	count=count+1
 
 print(inp)
+print("\r")
+
+
+
+#Reverse wovels of string 
+wovs=["a","e","i","o","u"]
+temp1=[]
+temp2=[]
+
+
+st="hello"
+
+for j in st:
+	if j not in wovs:
+		temp1.append(j)
+	else:
+		temp2.append(j)
+		temp1.append("temp")
+
+
+
+for m in range(len(temp1)):
+	if temp1[m]=="temp":
+		temp1[m]=temp2.pop()
+
+newst=""
+
+for m in temp1:
+	newst=newst+m
+
+print(newst)
+print("\r")
+
+
+
+#First Unique Character in String 
+s = "loveleetcode"
+
+list1=[]
+dict1={}
+
+
+for i in s:
+	if i not in dict1:
+		dict1[i]=0
+	else:
+		dict1[i]=dict1[i]+1
+
+for m in dict1:
+	if dict1[m]==0:
+		list1.append(m)
+
+if len(list1)==0:
+	print("-1")
+else:
+	print(s.index(list1[0]))
+print("\r")
+
+
+#Given an arbitrary ransom note string and another string containing letters from all the magazines, 
+#write a function that will return true if the
+#ransom note can be constructed from the magazines ; otherwise, it will return false.
+
+ransomNote="fffbfgfz"
+magazine="effjfggbffjdgbjjhhdegh"
+
+dict2={}
+flag=0
+
+for n in magazine:
+	if n not in dict2:
+		dict2[n]=1
+	else:
+		dict2[n]=dict2[n]+1
+
+for g in ransomNote:
+	if g in dict2:
+		dict2[g]=dict2[g]-1
+		if dict2[g]<0:
+			flag=1
+	else:
+		flag=1
+
+if flag==0:
+	print("true")
+else:
+	print("false")
+print("\r")
+
+
+
+
