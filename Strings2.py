@@ -23,3 +23,52 @@ else:
 	print("true")
 print("\r")
 
+
+
+#Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+s="Let's take LeetCode contest"
+temp=[]
+
+for j in s:
+	temp.append(j)
+
+
+news=""
+for k in range(len(temp)):
+	news=news+temp.pop()
+
+
+for word in news.split():
+	temp.append(word)
+
+news2=""
+for m in range(len(temp)):
+	news2= news2+ " " + temp.pop()
+
+print(news2[1:])
+print("\r")
+
+
+#Given a paragraph and a list of banned words, return the most frequent word that is not in the list of banned words.  
+#It is guaranteed there is at least one word that isn't banned, and that the answer is unique.
+
+paragraph = "Bob hit a ball, the hit BALL flew far after it was hit."
+banned = ["hit"]
+dic={}
+
+for c in "!?',;.": paragraph = paragraph.replace(c, " ")
+paragraph=paragraph.lower()
+
+
+for word in paragraph.split():
+	if word not in dic:
+		if word not in banned:
+			dic[word]=1
+	else:
+		dic[word]=dic[word] +1
+dex=max(dic.values())
+
+for m in dic:
+	if dic[m]==dex:
+		print(m)
+print("\r")
