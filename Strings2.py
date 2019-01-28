@@ -72,3 +72,33 @@ for m in dic:
 	if dic[m]==dex:
 		print(m)
 print("\r")
+
+
+#Given two strings s and t , write a function to determine if t is an anagram of s.
+s="aacc"
+t="ccac"
+
+di={}
+flag=0
+
+for i in s:
+	if i not in di:
+		di[i]=1
+	else:
+		di[i]=di[i]+1
+
+
+for m in t:
+	if m in di:
+		di[m]=di[m]-1
+		if di[m]<0:
+			flag=1
+	else:
+		flag=1
+
+
+if sum(di.values())==0 and flag==0:
+	print("true")
+else:
+	print("false")
+
