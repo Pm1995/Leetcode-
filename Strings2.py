@@ -101,4 +101,51 @@ if sum(di.values())==0 and flag==0:
 	print("true")
 else:
 	print("false")
+print("\r")
+
+
+
+#Given a string s consists of upper/lower-case alphabets and empty space characters ' ', return the length of last word in the string.
+s="a"
+li=[]
+
+for i in s.split():
+	li.append(i)
+
+
+print(len(li[-1]))
+print("\r")
+
+
+#Count the number of segments in a string, where a segment is defined to be a contiguous sequence of non-space characters.
+s=", , , ,        a, eaefa"
+
+#for c in "!,:;'":s=s.replace(c,"")
+listed=[]
+for i in s.split():
+	listed.append(i)
+
+print(len(listed))
+print("\r")
+
+
+#Student Attendance Record
+#A student could be rewarded if his attendance record doesn't contain more than one 'A' (absent) or more than two continuous 'L' (late).
+
+s="PPALL"
+count_a=0
+flag_L=0
+
+for i,n in enumerate(s):
+	if n=='A':
+		count_a=count_a+1
+	elif n=='L' and i<len(s)-2:
+		if s[i+1]=='L' and s[i+2]=='L':
+			flag_L=1
+
+if count_a>1 or flag_L==1:
+	print("false")
+else:
+	print("true")
+print("\r")
 
