@@ -149,3 +149,35 @@ else:
 	print("true")
 print("\r")
 
+
+#Repeated Substring Patterns
+#Given a non-empty string check if it can be constructed by taking a substring of it and appending multiple copies of the substring together
+s="ababba"
+
+
+ss = (s*2)[1:-1]
+
+print(s in ss)
+print("\n")
+
+
+#repeated string pattern
+#Given two strings A and B, find the minimum number of times A has to be repeated such that B is a substring of it. If no such solution, return -1.
+
+A = "a"
+B = "aa"
+
+thresh=len(B)//len(A)
+flag=0
+ans=0
+
+for i in range(1,thresh+2):
+	if B in (A*i):
+		flag=1
+		ans=i
+		print(ans)
+		break
+print("\r")
+
+
+
