@@ -102,4 +102,40 @@ suminp=sum(inp)
 
 if sumk!=suminp:
 	print(sumk-suminp)
+print("\r")
+
+
+#There are two sorted arrays nums1 and nums2 of size m and n respectively.
+#Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+
+nums1=[1,2]
+nums2=[3,4]
+median=0
+
+m=len(nums1)
+n=len(nums2)
+
+i=0
+j=0
+while i<m and j<n:
+	if nums1[i]<nums2[j]:
+		i=i+1
+	elif nums2[j]<=nums1[i]:
+		nums1.insert(i,nums2[j])
+		nums2.pop(j)
+		i=i+1
+
+k=0
+while k<len(nums2):
+	nums1.append(nums2[k])
+	nums2.pop(k)
+frac=len(nums1)//2
+
+if len(nums1)%2==0:
+	median=(nums1[frac-1] + nums1[frac])/2
+else:
+	median=nums1[frac]
+
+print(median)
+print("\r")
 

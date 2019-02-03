@@ -59,3 +59,67 @@ while ans!=1:
 print("\r")
 
 
+#first bad version 
+n=10
+bversion=4
+dict={}
+
+for i in range(0,n):
+	dict[i+1]=0
+	if i+1<bversion:
+		dict[i+1]="false"
+	if i+1>=bversion:
+		dict[i+1]="true"
+
+print(dict[4])
+print("\r")
+
+
+
+#Add digits until sum==1
+num=99
+
+#method 1 
+len=1000
+while len!=0 and num!=0:
+	sum=int(str(num)[0]) + int(str(num)[1])
+	len=sum//10
+	num=sum
+
+if num!=0:
+	print(sum)
+else:
+	print(0)
+print("\r")
+
+#method 2 
+while num>9:
+	num=sum(int(x) for x in str(num))
+print(num)
+print("\r")
+
+
+
+
+#Find square root without calculator
+thresh=8
+root=0
+store_b=0
+
+n=0
+while n*n<thresh:
+	n=n+1
+	if n*n>=thresh:
+		store_b=n
+
+store_a=store_b-1
+
+if store_b*store_b==thresh:
+	root=store_b
+else:
+	root=store_a + (thresh-store_a*store_a)*(store_b-store_a)/(store_b*store_b-store_a*store_a)
+
+print(root)
+print("\r")
+
+
