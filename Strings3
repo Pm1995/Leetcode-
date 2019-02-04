@@ -1,0 +1,57 @@
+#Given a non-empty string s, you may delete at most one character. Judge whether you can make it a palindrome.
+def change_char(s, p, r):
+    return s[:p]+r+s[p+1:]
+
+s="cdbeeeabddddbaeedebdc"
+print(s)
+dic={}
+
+for i in s:
+	if i not in dic:
+		dic[i]=1
+	else:
+		dic[i]=dic[i]+1
+
+
+
+
+for i in range(len(s)//2):
+	if s[i]==s[-(i+1)]:
+		continue
+	else:
+		if dic[s[i]]>dic[s[-(i+1)]]:
+			#s=s.replace(s[-(i+1)],""[,1])
+			change_char(s,-(i+1),"")
+			break
+		elif dic[s[i]]<=dic[s[-(i+1)]]:
+			#s=s.replace(s[i],""[,1])
+			change_char(s,i,"")
+			break
+
+
+print(s)
+print("\r")
+
+
+
+#detect capital
+s="flaG"
+uppers=""
+lowers=""
+
+for i in s:
+	if i.isupper():
+		uppers=uppers+i
+	elif i.islower():
+		lowers=lowers+i
+
+
+if uppers==s or lowers==s:
+	print("true")
+elif len(uppers)==1 and uppers==s[0]:
+	print("true")
+else:
+	print("false")
+print("\r")
+
+
