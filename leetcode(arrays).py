@@ -72,22 +72,16 @@ print("\r")
 #Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 nums=[2, 7, 11, 15]
 target=9
-dicti={}
+nums=[2,7,11,15]
+target=9
+dic={}
 
-for i in range(len(nums)):
-	#dicti[nums[i]]=0
-	m=target-nums[i]
-	dicti[nums[i]]=m
-list=[]
-
-for d in dicti:
-	if d + dicti[d]==9 and dicti[d]>0:
-		list.append(d)
-		list.append(dicti[d])
-		break
-
-for i in range(len(list)):
-	print(nums.index(list[i]))
+for i,n in enumerate(nums):
+	m=target-n
+	if m not in dic:
+		dic[n]=i
+	else:
+		print([dic[m]+1,i+1])
 print("\r")
 
 
@@ -138,4 +132,63 @@ else:
 
 print(median)
 print("\r")
+
+
+#Given a sorted array and a target value, return the index if the target is found. 
+#If not, return the index where it would be if it were inserted in order.
+#You may assume no duplicates in the array.
+
+array=[1,3,5,6]
+target=7
+not_found=1
+
+for i,n in enumerate(array):
+	if n==target:
+		print(i)
+		print("yes")
+		not_found=0
+	elif min(array)>target:
+		array.insert(0,target)
+		print(array.index(target))
+		not_found=0
+		break
+	elif max(array)<target:
+		array.append(target)
+		print(array.index(target))
+		not_found=0
+		break
+
+
+
+if not_found==1:
+	for i,n in enumerate(array):
+		if n>target:
+			array.insert(i,target)
+			print(i)
+			break
+print("\r")
+
+
+
+
+#Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
+#The digits are stored such that the most significant digit is at the head of the list, and each element 
+#in the array contain a single digit.
+
+lis=[1,2,3]
+s=""
+for i in lis:
+	s=s+str(i)
+
+num=0
+num=1 + int(s)
+li2=[]
+for j in str(num):
+	li2.append(int(j))
+
+print(li2)
+print("\r")
+
+
+
 
