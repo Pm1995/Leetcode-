@@ -1,13 +1,14 @@
 #remove duplicates from sorted array
 nums=[0,0,1,1,1,2,2,3,3,4]
+c=0
+while c<len(nums)-1:
+	if nums[c]==nums[c+1]:
+		nums.pop(c)
+	else:
+		c=c+1
 
-dict={}
-for i in range(len(nums)):
-	dict[nums[i]]=0
-list=[]
-for k in dict.keys():
-	list.append(k)
-print(list)
+
+print(nums)
 print("\r")
 
 
@@ -190,5 +191,42 @@ print(li2)
 print("\r")
 
 
+#Given an array nums and a value val, remove all instances of that value in-place and return the new length.
+#Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+nums = [0,1,2,2,3,0,4,2]
+val = 2
 
+
+i=0
+while i<len(nums):
+	if nums[i]==val:
+		nums.pop(i)
+	else:
+		i=i+1
+
+print(nums) 
+print("\r")
+
+
+
+#max subarray
+#Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+nums=[-2,1,-3,4,-1,2,1,-5,4]
+
+max_so_far=0
+max_ending_here=0
+
+
+for i in range(len(nums)):
+	max_ending_here=max_ending_here + nums[i]
+	if max_ending_here<0:
+		max_ending_here=0
+	if max_so_far<max_ending_here:
+		max_so_far=max_ending_here
+
+if max_so_far>0:
+	print(max_so_far)
+else:
+	print(max(nums))
+print("\r")
 
