@@ -51,3 +51,90 @@ if (summ==1 and n==1) or (summ==sum(nums) and 0 not in nums):
 	print("0")
 print("\r")
 
+
+
+#Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+#method 1 
+nums=[0,1,0,3,12]
+i=0
+while sum(nums[i:])!=0:
+	if nums[i]==0:
+		nums.append(0)
+		nums.pop(i)
+	else:
+		i=i+1
+
+print(nums)
+
+#method 2 
+nums=[0,1,0,3,12]
+c = 0
+i=0
+while c <len(nums):
+	if nums[i]==0:
+		nums.pop(i)
+		nums.append(0)
+	else:
+		i=i+1
+	c+= 1
+print(nums)
+
+print("\r")
+
+
+#Given a non-empty array of integers, return the third maximum number in this array. If it does not exist, 
+#return the maximum number. The time complexity must be in O(n).
+nums=[1,2,2,3]
+nums.sort()
+
+d={}
+i=0
+c=1
+
+
+while i<len(nums)-1:
+	if nums[-(i+1)]!=nums[-(i+2)]:
+		d[nums[-(i+1)]]=c
+		d[nums[-(i+2)]]=c+1
+		c=c+1
+	else:
+		d[nums[-(i+1)]]=c
+		d[nums[-(i+2)]]=c
+	i=i+1
+
+flag=0
+for k in d:
+	if d[k]==3:
+		print(k)
+		flag=1
+
+if flag==0:
+	print(max(nums))
+print("\r")
+
+
+
+
+#
+nums=[4,3,2,7,8,2,3,1]
+c=0
+nums.sort()
+while c<len(nums)-1:
+	if nums[c+1]==nums[c]:
+		nums.pop(c+1)
+	else:
+		c=c+1
+
+k=0
+v=0
+while k<len(nums)-1:
+	if nums[v+1]-nums[v]>1:
+		nums.insert(v+1,nums[v]+1)
+	v=v+1
+	k=k+1
+
+print(nums)
+
+
+
+
