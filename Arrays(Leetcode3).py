@@ -4,10 +4,10 @@
 nums=[1,4,3,2]
 nums.sort()
 
-sum=0
+sumi=0
 for i in range(0,len(nums)//2):
-	sum=sum+min(nums[2*i:2*(i+1)])
-print(sum)
+	sumi=sumi+min(nums[2*i:2*(i+1)])
+print(sumi)
 print("\r")
 
 
@@ -29,36 +29,6 @@ for j in st:
 	new.append(int(j))
 print(new)
 print("\r")
-
-
-
-#
-"""
-S = "abbxxxxzyy"
-
-list1=[]
-list2=[]
-
-for i in range(len(S)-1):
-	if S[i]==S[i+1]:
-		list2.append(S[i])
-	elif S[i]!=S[i+1] or i+1==len(S)-1:
-		list2.append(S[i])
-		list1.append(list2)
-		list2=[]
-
-
-#edge case 
-for i in range(len(S)-1):
-	if S[-(i+1)]==S[-(i+2)]:
-		list2.append(S[-(i+1)])
-	else:
-		list2.append(S[-(i+1)])
-		list1.append(list2)
-		list2=[]
-		break
-
-print(list1)"""
 
 
 
@@ -96,6 +66,98 @@ for i in nums:
 
 print(maxi)
 print("\r")
+
+
+#Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+#Find all the elements of [1, n] inclusive that do not appear in this array.
+#Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.
+
+nums=[4,3,2,7,8,2,3,1]
+
+for i in range(0,len(nums)):
+	if nums[abs(nums[i])-1]>0:
+		nums[abs(nums[i])-1]=nums[abs(nums[i])-1]*(-1)
+	elif nums[abs(nums[i])-1]<0:
+		continue
+
+listed=[]
+for k in range(len(nums)):
+	if nums[k]>0:
+		listed.append(k+1)
+
+print(listed)
+print("\r")
+
+
+
+
+#An array is monotonic if it is either monotone increasing or monotone decreasing.
+#An array A is monotone increasing if for all i <= j, A[i] <= A[j].  An array A is monotone decreasing if for all i <= j, A[i] >= A[j].
+#Return true if and only if the given array A is monotonic.
+
+nums=[1,2,2,3]
+
+inc="true"
+dec="true"
+
+for i in range(len(nums)-1):
+	if nums[i]>nums[i+1]:
+		inc="false"
+	if nums[i]<nums[i+1]:
+		dec="false"
+
+
+print(inc or dec)
+print("\r")
+
+
+#Given an array consisting of n integers, find the contiguous subarray of given length k that has the maximum average value. 
+#And you need to output the maximum average value.
+
+#Method 1 
+nums=[3,3,4,3,0]
+
+k=3
+starts=len(nums)-k+1
+count=0
+maxm=0
+negmax=-1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+
+for i in range(0,starts):
+	#print(count)
+	count=sum(nums[i:i+k])/k
+	if count>maxm:
+		maxm=max(maxm,count)
+		count=0
+	if count<0:
+		negmax=max(count,negmax)
+		count=0
+
+if maxm>0:
+	print(maxm)
+else:
+	print(negmax)
+
+
+print("\r")
+
+
+#Method 2 : 
+curr_mean=sum(nums[:k])
+max_mean=curr_mean
+
+
+for i in range(0,len(nums)-k):
+	curr_mean=curr_mean-nums[i]
+	curr_mean=curr_mean+nums[i+k]
+
+	if curr_mean>max_mean:
+		max_mean=curr_mean
+
+print(max_mean/k)
+print("\r")
+
 
 
 
