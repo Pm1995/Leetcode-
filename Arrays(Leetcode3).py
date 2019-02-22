@@ -159,5 +159,78 @@ print(max_mean/k)
 print("\r")
 
 
+"""
+#
+new=[]
+nums=[-2,0]
+
+i=0
+while i<len(nums):
+	if nums[i]<0:
+		new.insert(0,-1*nums[i])
+		nums.pop(i)
+	else:
+		i=i+1
+
+		
+
+a=len(nums)
+b=len(new)
+
+m=0
+n=0
+
+while m<a+b:
+	try:
+		if nums[m]>=new[n]:
+			nums.insert(m,new[n])
+			new.pop(n)
+			m=m+1
+		else:
+			m=m+1
+	except:
+		break
+
+for i in range(len(nums)):
+	nums[i]=nums[i]*nums[i]
+
+print(nums)
+"""
+
+
+
+
+#The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, 
+#such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
+def fibonacci(n):
+	cache={}
+	def sefib(n):
+		if n==0:
+			return 0
+		if n==1:
+			return 1
+		elif n in cache:
+			return cache[n]
+		else:
+			cache[n]=sefib(n-1) + sefib(n-2)
+			return cache[n]
+	return sefib(n)
+
+
+print(fibonacci(2))
+print("\r")
+
+
+#Given an array A of non-negative integers, return an array consisting of all the even elements of A, 
+#followed by all the odd elements of A.
+#You may return any answer array that satisfies this condition.
+
+nums=[3,1,2,4]
+
+for i in range(len(nums)):
+	if nums[i]%2==0:
+		nums.insert(0,nums.pop(i))
+
+print(nums)
 
 
