@@ -232,5 +232,53 @@ for i in range(len(nums)):
 		nums.insert(0,nums.pop(i))
 
 print(nums)
+print("\r")
 
 
+
+#Given an array A of positive lengths, return the largest perimeter of a triangle with non-zero area, formed from 3 of these lengths.
+#If it is impossible to form any triangle of non-zero area, return 0.
+A=[1,2,1]
+A.sort()
+
+maxi=0
+maxi_so_far=0
+
+for i in range(len(A)-2):
+	if A[i] + A[i+1] > A[i+2]:
+		maxi=A[i]+A[i+1]+A[i+2]
+		maxi_so_far=max(maxi,maxi_so_far)
+
+
+print(maxi_so_far)
+print("\r")
+
+
+#We have an array A of integers, and an array queries of queries.
+#For the i-th query val = queries[i][0], index = queries[i][1], we add val to A[index].  
+#Then, the answer to the i-th query is the sum of the even values of A.
+#(Here, the given index = queries[i][1] is a 0-based index, and each query permanently modifies the array A.)
+#Return the answer to all queries.  Your answer array should have answer[i] as the answer to the i-th query.
+
+A = [1,2,3,4]
+queries = [[1,0],[-3,1],[-4,0],[2,3]]
+
+listnew=[]
+
+
+for que in queries:
+	count=0
+	A[que[1]] = A[que[1]] + que[0]
+	#for m in A:
+	#	if m%2==0:
+	#		count=count+m
+	#listnew.append(count)
+	listnew.append(sum(num for num in A if not num%2))
+
+print(listnew)
+print("\r")
+
+
+#myList = [1, 3, 5, 6, 8, 10, 34, 2, 0, 3]
+
+#print(sum(num for num in myList if not num%2))
