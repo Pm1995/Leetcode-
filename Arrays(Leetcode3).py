@@ -159,44 +159,6 @@ print(max_mean/k)
 print("\r")
 
 
-"""
-#
-new=[]
-nums=[-2,0]
-
-i=0
-while i<len(nums):
-	if nums[i]<0:
-		new.insert(0,-1*nums[i])
-		nums.pop(i)
-	else:
-		i=i+1
-
-		
-
-a=len(nums)
-b=len(new)
-
-m=0
-n=0
-
-while m<a+b:
-	try:
-		if nums[m]>=new[n]:
-			nums.insert(m,new[n])
-			new.pop(n)
-			m=m+1
-		else:
-			m=m+1
-	except:
-		break
-
-for i in range(len(nums)):
-	nums[i]=nums[i]*nums[i]
-
-print(nums)
-"""
-
 
 
 
@@ -254,31 +216,49 @@ print(maxi_so_far)
 print("\r")
 
 
-#We have an array A of integers, and an array queries of queries.
-#For the i-th query val = queries[i][0], index = queries[i][1], we add val to A[index].  
-#Then, the answer to the i-th query is the sum of the even values of A.
-#(Here, the given index = queries[i][1] is a 0-based index, and each query permanently modifies the array A.)
-#Return the answer to all queries.  Your answer array should have answer[i] as the answer to the i-th query.
+#Say you have an array for which the ith element is the price of a given stock on day i.
+#If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), 
+#design an algorithm to find the maximum profit.
+#Note that you cannot sell a stock before you buy one.
 
-A = [1,2,3,4]
-queries = [[1,0],[-3,1],[-4,0],[2,3]]
-
-listnew=[]
+prices=[1,2]
 
 
-for que in queries:
-	count=0
-	A[que[1]] = A[que[1]] + que[0]
-	#for m in A:
-	#	if m%2==0:
-	#		count=count+m
-	#listnew.append(count)
-	listnew.append(sum(num for num in A if not num%2))
+min_price=1000000
 
-print(listnew)
+profit=0
+max_profit=0
+
+for i in range(len(prices)):
+	if prices[i]<min_price:
+		min_price=prices[i]
+	elif prices[i] - min_price>profit:
+		profit=prices[i]-min_price
+		max_profit=max(profit,max_profit)
+
+print(max_profit)
 print("\r")
 
 
-#myList = [1, 3, 5, 6, 8, 10, 34, 2, 0, 3]
+#Say you have an array for which the ith element is the price of a given stock on day i.
+#Design an algorithm to find the maximum profit. You may complete as many transactions as you like
+# (i.e., buy one and sell one share of the stock multiple times).
+#Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).
 
-#print(sum(num for num in myList if not num%2))
+prices=[1,2,3,4,5]
+minprice=100000000
+profit=0
+
+
+for i in range(len(prices)):
+	if prices[i]<minprice:
+		minprice=prices[i]
+	elif prices[i]-minprice>0:
+		profit= profit + prices[i]-minprice
+		minprice=prices[i]
+
+
+print(profit)
+print("\r")
+
+
