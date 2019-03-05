@@ -32,7 +32,9 @@ print("\r")
 
 
 
-#
+#Given an array of integers and an integer k, you need to find the number of unique k-diff pairs in the array. 
+#Here a k-diff pair is defined as an integer pair (i, j), where
+#i and j are both numbers in the array and their absolute difference is k.
 nums=[1,1,1,1,1]
 k=0
 lis=set()
@@ -148,16 +150,43 @@ for n in deck:
 		d[n]=d[n]+1
 
 
-print(d)
 
 
 x=min(d.values())
 
 
 for i in d.values():
-	print(i%x)
 	if i%x==1:
 		print("false")
 
 print("\r")
+
+
+
+
+#Given an integer array, you need to find one continuous subarray that if you 
+#only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.
+#You need to find the shortest such subarray and output its length.
+
+nums=[2, 6, 4, 8, 10, 9, 15]
+
+m=0
+n=0
+
+for i in range(len(nums)-1):
+	if nums[i]!=sorted(nums)[i]:
+		m=i
+		break
+
+
+
+for j in range(len(nums))[::-1]:
+	if nums[j]!=sorted(nums)[j]:
+		n=j
+		break
+
+
+print(n-m+1)
+print("\r")
+
 
