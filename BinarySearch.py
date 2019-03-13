@@ -1,4 +1,4 @@
-#
+#Two Sum 
 numbers = [2,3,4]
 target = 6
 
@@ -13,7 +13,7 @@ for i,n in enumerate(numbers):
 print("\r")
 
 
-#
+#Peak index in array 
 A=[0,2,1,0]
 
 max_=-1000000
@@ -48,30 +48,7 @@ while low<=high:
 print("\r")
 
 
-#
-nums=[1,3]
-target=2
 
-low=0
-high=len(nums)
-
-while low<high:
-	mid=(low+high)//2
-	if nums[mid]==target:
-		print(mid)
-		break
-	if nums[mid]<target:
-		low=mid + 1 
-		if low==high:
-			print(high+1)
-	if nums[mid]>target:
-		high=mid-1
-		if low==high and target>nums[low]:
-			print(low+1)
-		else:
-			print(low)
-
-print("\r")
 
 
 #Given two arrays, write a function to compute their intersection.
@@ -128,26 +105,100 @@ print(li)
 print("\r")
 
 
-"""#
-letters = ["e","e","e","e","e","e","n","n","n","n"]
-target = "e"
+
+#Given a sorted array and a target value, return the index if the target is found. 
+#If not, return the index where it would be if it were inserted in order.
+#You may assume no duplicates in the array.
+#
+nums=[1,3,6,9]
+target=9
 
 low=0
-high=len(letters)-1
+high=len(nums)-1
 
-while low<high:
+while low<=high:
 	mid=(low+high)//2
-	if letters[mid]>target:
-		if letters[mid-1]>target:
-			high=mid-1
-		else:
-			print(letters[mid])
-			break
-	elif letters[mid]<target:
-		if letters[mid+1]<=target:
-			low=mid+1
-		else:
-			print(letters[mid+1])
-			break
+	if target==nums[mid]:
+		print(mid)
+		break
+	elif nums[mid-1]<target and nums[mid]>target:
+		print(mid)
+		break
+	elif nums[mid]<target and nums[mid+1]>=target:
+		print(mid+1)
+		break
+	elif nums[mid]<target:
+		low=mid + 1 
+	else:
+		high=mid-1
+print("\r")
 
-"""
+
+
+
+#Compute and return the square root of x, where x is guaranteed to be a non-negative integer.
+#Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.
+
+x=56
+n=0
+while n*n<x:
+	n=n+1
+
+
+high=n
+low=n-1
+
+
+if high*high==x:
+	print(high)
+else:
+	print(int(((high-low)/(high*high-low*low))*(x-low*low) + low))
+
+print("\r")
+
+
+
+#Given a list of sorted characters letters containing only lowercase letters, and given a target letter target, 
+#find the smallest element in the list that is larger than the given target.
+#Letters also wrap around. For example, if the target is target = 'z' and letters = ['a', 'b'], the answer is 'a'.
+
+letters=["c", "f", "j"]
+target="a"
+flag=0
+for i in range(len(letters)):
+	if letters[i]<=target:
+		continue
+	else:
+		flag=1
+		print(letters[i])
+		break
+
+if flag==0:
+	print(letters[0])
+print("\r")
+
+
+
+
+
+#square root of integer method 2 using binary search 
+n=17
+
+low=0
+high=n
+
+while low<=high:
+	mid=(low+high)//2
+	if mid*mid==n:
+		print(mid)
+		break
+	if mid*mid>n:
+		high=mid-1
+	else:
+		low=mid+1
+
+if mid*mid!=n:
+	print(int(((low-high)/(low*low-high*high))*(n-high*high) + high))
+
+print("\r")
+
