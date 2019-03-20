@@ -25,30 +25,6 @@ print("\r")
 
 
 
-#Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
-s="Let's take LeetCode contest"
-temp=[]
-
-for j in s:
-	temp.append(j)
-
-
-news=""
-for k in range(len(temp)):
-	news=news+temp.pop()
-
-
-for word in news.split():
-	temp.append(word)
-
-news2=""
-for m in range(len(temp)):
-	news2= news2+ " " + temp.pop()
-
-print(news2[1:])
-print("\r")
-
-
 #Given a paragraph and a list of banned words, return the most frequent word that is not in the list of banned words.  
 #It is guaranteed there is at least one word that isn't banned, and that the answer is unique.
 
@@ -179,5 +155,54 @@ for i in range(1,thresh+2):
 		break
 print("\r")
 
+
+
+#March 2019 starts here 
+
+#Given a string, you need to reverse the order of characters in each word within a sentence while 
+#still preserving whitespace and initial word order.
+s="Let's take LeetCode contest"
+news=[]
+
+for j in s.split():
+	print(j[::-1])
+print("\r")
+
+
+
+#Write a function that reverses a string. The input string is given as an array of characters char[].
+#Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+s=["h","e","l","l","o"]
+for i in range(len(s)//2):
+	s[i],s[-(i+1)]=s[-(i+1)],s[i]
+print(s)
+print("\r")
+
+
+#You have an array of logs.  Each log is a space delimited string of words.
+#For each log, the first word in each log is an alphanumeric identifier.  Then, either:
+#Each word after the identifier will consist only of lowercase letters, or;
+#Each word after the identifier will consist only of digits.
+#We will call these two varieties of logs letter-logs and digit-logs.  It is guaranteed that each log has at least one word after its identifier.
+#Reorder the logs so that all of the letter-logs come before any digit-log.  The letter-logs are ordered lexicographically ignoring identifier, with the identifier used in case of ties.  The digit-logs should be put in their original order.
+#Return the final order of the logs.
+
+logs=["qi ir oo i", "cp vnzw i", "0 fkbikbts", "4 j trouka", "gn j q al", "5r w wgqc", "m8 x haje", "fg 28694 6", "i gf mwdoa", "ao 0850716"]
+
+lis_al=[]
+lis_dig=[]
+
+
+for i in logs:
+	if i.split()[1].isdigit():
+		lis_dig.append(i)
+	else:
+		lis_al.append(i)
+
+
+lis_al=sorted(lis_al,key=lambda x:x.split()[1:])
+lis_al.extend(lis_dig)
+print(lis_al)
+print("\r")
 
 
