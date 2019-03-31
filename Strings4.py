@@ -94,7 +94,7 @@ print("\r")
 
 
 #Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
-s="cc"
+s="bcbb"
 
 di={}
 
@@ -109,4 +109,82 @@ for m in range(len(s)):
 		print(m)
 		break
 print("\r")
+
+
+
+#You are given a string representing an attendance record for a student. The record only contains the following three characters:
+#'A' : Absent.
+#'L' : Late.
+#'P' : Present.
+#A student could be rewarded if his attendance record doesn't contain more than one 'A' (absent) or more than two continuous 'L' (late).
+#You need to return whether the student could be rewarded according to his 
+
+s="PPALLP"
+
+count_A=0
+
+for i in range(len(s)):
+	if s[i]=="A":
+		count_A+=1
+		if count_A==2:
+			print("false")
+			break
+	elif s[i]=="L" and i<=len(s)-3:
+		if s[i+1]=="L" and s[i+2]=="L":
+			print("false")
+			break
+print("\r")
+
+
+
+
+
+#Given a non-empty string check if it can be constructed by taking a substring of it and appending multiple copies of the substring together. 
+#You may assume the given string consists of lowercase English letters only and its length will not exceed 10000.
+s="abab"
+check=(s*2)[1:-1]
+print(s in check)
+print("\r")
+
+
+#Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+#An input string is valid if:
+#Open brackets must be closed by the same type of brackets.
+#Open brackets must be closed in the correct order.
+#Note that an empty string is also considered valid.
+dic={"]":"[",")":"(","}":"{"}
+stack=[]
+
+s="(("
+
+for i in s:
+	if i in dic.values():
+		stack.append(i)
+	else:
+		if len(stack)==0 or dic[i]!=stack.pop(-1):
+			print("false")
+
+if len(stack)>0:
+	print("false")
+else:
+	print("true")
+
+print("\r")
+
+
+#Write a function to find the longest common prefix string amongst an array of strings.
+#If there is no common prefix, return an empty string ""
+strs=["dog","racecar","car"]
+
+mini=min(strs)
+maxi=max(strs)
+
+
+
+for i,n in enumerate(mini):
+	if n!=maxi[i]:
+		print(mini[:i])
+		break
+print("\r")
+
 
