@@ -174,7 +174,7 @@ print("\r")
 
 #Write a function to find the longest common prefix string amongst an array of strings.
 #If there is no common prefix, return an empty string ""
-strs=["dog","racecar","car"]
+strs=["flower","flow","flight"]
 
 mini=min(strs)
 maxi=max(strs)
@@ -185,6 +185,48 @@ for i,n in enumerate(mini):
 	if n!=maxi[i]:
 		print(mini[:i])
 		break
+print("\r")
+
+
+
+#Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+s= "A man, a plan, a canal: Panama"
+s="".join(e for e in s if e.isalnum())
+s=s.lower()
+
+
+for i in range(len(s)//2):
+	if s[i]!=s[-(i+1)]:
+		print("false")
+print("\r")
+
+
+
+#Given two strings A and B, find the minimum number of times A has to be repeated such that B is a substring of it. If no such solution, return -1.
+#For example, with A = "abcd" and B = "cdabcdab".
+#Return 3, because by repeating A three times (“abcdabcdabcd”), B is a substring of it; and B is not a substring of A repeated two times ("abcdabcd").
+A="abc"
+B="cabcabca"
+
+frac=len(B)//len(A)
+
+for i in range(1,frac+3):
+	if B in A*i:
+		print("true")
+print("\r")
+
+
+#Given a string and an integer k, you need to reverse the first k characters for every 2k characters counting from the start of the string. 
+#If there are less than k characters left, reverse all of them. If there are less than 2k but greater than or equal to k characters, 
+#then reverse the first k characters and left the other as original.
+
+s = "abcdefg"
+k = 3
+
+for i in range(0,len(s),2*k):
+	s=(s.replace(s[i:i+k],s[i:i+k][::-1]))
+
+print(s)
 print("\r")
 
 
