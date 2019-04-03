@@ -55,3 +55,33 @@ else:
 	print("false")
 print("\r")
 
+
+#Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.
+nums=[3,0,1]
+
+check=(len(nums)*(len(nums)+1))//2
+
+print(check-sum(nums))
+print("\r")
+
+
+#
+S="abcdddeeeeaabbbcd"
+
+
+
+d={}
+
+l=[]
+
+for i in range(len(S)):
+	if S[i] in d:
+		d[S[i]]+=1
+		if d[S[i]]>=3:
+			l.append(S[i])
+	else:
+		d[S[i]]=1
+		d[S[i-1]]=0
+
+print(set(l))
+print(d)
