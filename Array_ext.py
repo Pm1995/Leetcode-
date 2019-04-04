@@ -65,6 +65,72 @@ print(check-sum(nums))
 print("\r")
 
 
+
+#Given an array nums and a value val, remove all instances of that value in-place and return the new length.
+#Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+#The order of elements can be changed. It doesn't matter what you leave beyond the new length
+
+
+nums = [0,1,2,2,3,0,4,2]
+val = 2
+
+
+c=0
+i=0
+
+k=len(nums)
+
+while c<k:
+	if nums[i]==val:
+		nums.pop(i)
+	else:
+		i=i+1
+	c=c+1
+
+print(len(nums))
+print("\r")
+
+
+#Given an unsorted array of integers, find the length of longest continuous increasing subsequence (subarray).
+nums=[1,3,5,4,7,8,9,10,11,12]
+count=0
+count_so_far=0
+
+for i in range(len(nums)-1):
+	if nums[i]<nums[i+1]:
+		count=count+1
+		count_so_far=max(count,count_so_far)
+	else:
+		count=0
+
+print(count_so_far+1)
+print("\r")
+
+
+
+#In a given integer array nums, there is always exactly one largest element.
+#Find whether the largest element in the array is at least twice as much as every other number in the array.
+#If it is, return the index of the largest element, otherwise return -1.
+nums = [3,6,1,0]
+
+maxi=max(nums)
+
+for i in range(len(nums)):
+	if nums[i]==maxi:
+		continue
+	else:
+		if nums[i]*2>maxi:
+			print("false")
+
+print(nums.index(maxi))
+print("\r")
+
+
+
+
+
+
+"""
 #
 S="abcdddeeeeaabbbcd"
 
@@ -84,4 +150,4 @@ for i in range(len(S)):
 		d[S[i-1]]=0
 
 print(set(l))
-print(d)
+print(d)"""
