@@ -126,28 +126,36 @@ print(nums.index(maxi))
 print("\r")
 
 
+#Given an array consisting of n integers, find the contiguous subarray of given length k that has the maximum average value. 
+#And you need to output the maximum average value.
+nums=[4,2,1,3,3]
+k=2
+
+
+curr=sum(nums[:k])
+
+max_yet=curr
+
+for i in range(len(nums)-k):
+	curr=curr-nums[i]+nums[i+k]
+	max_yet=max(max_yet,curr)
+
+print(max_yet)
+print("\r")
 
 
 
 
-"""
-#
-S="abcdddeeeeaabbbcd"
+
+#Given a non-empty array of integers, return the third maximum number in this array. If it does not exist, return the maximum number. 
+#The time complexity must be in O(n).
+nums=[2, 2, 3, 1]
 
 
+setted=set(nums)
+if len(setted)<3:
+	print(max(nums))
+else:
+	print(sorted(setted)[-3])
+print("\r")
 
-d={}
-
-l=[]
-
-for i in range(len(S)):
-	if S[i] in d:
-		d[S[i]]+=1
-		if d[S[i]]>=3:
-			l.append(S[i])
-	else:
-		d[S[i]]=1
-		d[S[i-1]]=0
-
-print(set(l))
-print(d)"""
