@@ -73,3 +73,38 @@ for i in sentance.split():
 print(new[1:])
 print("\r")
 
+
+
+#Write a function that prints the least integer that is not present in a given list and cannot be 
+#represented by the summation of the sub-elements of the list
+array=[1, 2, 3, 4, 5, 6]
+
+res=1
+for i in range(len(array)):
+	if array[i]<=res:
+		res=res+array[i]
+	else:
+		break
+print(res)
+print("\r")
+
+#You have a stream of data coming in of size n, but you don’t know what n is ahead of time. 
+#Can you write an algorithm that will take a random sample of k elements
+
+import random
+
+stream=[1,2,4,6,9]
+
+k=3
+
+listed=[]
+
+
+for i in range(0,k):
+	s=random.choice(stream)
+	stream.remove(s)
+	listed.append(s)
+
+print(listed)
+print("\r")
+
